@@ -1,0 +1,39 @@
+backend:
+  name: test-repo
+  branch: master
+
+publish_mode: editorial_workflow
+media_folder: "static/images"
+public_folder: "images"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "content/dev/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Fragment",
+          name: "fragment",
+          widget: "hidden",
+          default: "content",
+        }
+      - {
+          label: "Title Alignment",
+          name: "title_align",
+          widget: "hidden",
+          default: "left",
+        }
+      - {
+          label: "Display Date",
+          name: "display_date",
+          widget: "hidden",
+          default: true,
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Categories", name: "categories", widget: "list" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "[asset] image", widget: "image" }
+      - { label: "Summary", name: "summary", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
