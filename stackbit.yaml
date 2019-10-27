@@ -45,6 +45,11 @@ models:
     type: page
     label: Global
     file: _global/index.md
+    fields:
+      - type: boolean
+      - name: headless
+      - label: Headless
+      - default: true
   home:
     type: page
     label: Home
